@@ -1,5 +1,5 @@
-import React from "react";
-import { CheckCircleIcon, XCircleIcon } from "./icons";
+import React from 'react';
+import { CheckCircleIcon, XCircleIcon } from './icons';
 
 type PlanFeature = string;
 
@@ -26,28 +26,23 @@ const PricingPlan: React.FC<PricingPlanProps> = ({
     isPopular,
     isEnterprise
 }) => {
-
     const cardBaseClasses = "relative rounded-3xl p-8 flex flex-col h-full border";
-
     const cardClasses = isPopular
         ? `${cardBaseClasses} bg-[#2A2F1D] border-[#E4F64A]`
         : `${cardBaseClasses} bg-[#1D1D1D] border-gray-700/50`;
 
     return (
         <div className={cardClasses}>
-
             {isPopular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#E4F64A] text-black text-sm font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
                     Mais Popular
                 </div>
             )}
 
-            <h3 className={`text-2xl font-semibold flex items-baseline flex-wrap ${isPopular ? "text-white" : "text-[#E4F64A]"}`}>
+            <h3 className={`text-2xl font-semibold flex items-baseline flex-wrap ${isPopular ? 'text-white' : 'text-[#E4F64A]'}`}>
                 {name}
                 {isEnterprise && (
-                    <span className="text-base font-normal ml-2 whitespace-nowrap">
-                        – {priceDetails}
-                    </span>
+                    <span className="text-base font-normal ml-2 whitespace-nowrap">– {priceDetails}</span>
                 )}
             </h3>
 
@@ -60,16 +55,14 @@ const PricingPlan: React.FC<PricingPlanProps> = ({
 
             <a
                 href="#"
-                className={`w-full text-center text-black font-semibold py-3 rounded-full mt-6 transition-all duration-300 transform hover:-translate-y-0.5 block bg-gradient-to-r from-[#E4F64A] to-[#A2E00B] ${isEnterprise ? "mt-8" : ""}`}
+                className={`w-full text-center text-black font-semibold py-3 rounded-full mt-6 transition-all duration-300 transform hover:-translate-y-0.5 block bg-gradient-to-r from-[#E4F64A] to-[#A2E00B] ${isEnterprise ? 'mt-8' : ''}`}
             >
                 {buttonText}
             </a>
 
             <div className="mt-6 space-y-1">
                 {descriptions.map((desc, i) => (
-                    <p key={i} className="text-[#E4F64A] text-sm">
-                        {desc}
-                    </p>
+                    <p key={i} className="text-[#E4F64A] text-sm">{desc}</p>
                 ))}
             </div>
 
@@ -112,15 +105,15 @@ const plansData: PricingPlanProps[] = [
             "Linha do Tempo de Retenção",
             "Hashtags sugeridas",
             "Títulos curtos",
-            "Relatório rápido (mensal)",
+            "Relatório rápido (mensal)"
         ],
         excludedFeatures: [
             "Comparador",
             "Mapa de Calor",
             "Sugestões visuais de cortes",
             "Reescrita de roteiro",
-            "Microcopy completo",
-        ],
+            "Microcopy completo"
+        ]
     },
     {
         name: "Pro",
@@ -136,9 +129,9 @@ const plansData: PricingPlanProps[] = [
             "Mapa de Calor",
             "Reescrita de roteiro com IA",
             "Títulos, legendas e CTA otimizados",
-            "Relatório quinzenal (IA)",
+            "Relatório quinzenal (IA)"
         ],
-        isPopular: true,
+        isPopular: true
     },
     {
         name: "Studio",
@@ -151,8 +144,8 @@ const plansData: PricingPlanProps[] = [
             "Pastas por cliente",
             "Exportação CSV",
             "Relatório semanal (IA)",
-            "Suporte prioritário",
-        ],
+            "Suporte prioritário"
+        ]
     },
     {
         name: "Enterprise",
@@ -164,10 +157,10 @@ const plansData: PricingPlanProps[] = [
             "Tudo do Studio",
             "SLA comercial",
             "Onboarding dedicado",
-            "Customizações avançadas",
+            "Customizações avançadas"
         ],
-        isEnterprise: true,
-    },
+        isEnterprise: true
+    }
 ];
 
 export const PricingSection: React.FC = () => (
@@ -178,20 +171,16 @@ export const PricingSection: React.FC = () => (
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center">
-                <h2 className="text-4xl md:text-5xl font-extrabold text-[#E4F64A]">
-                    Escolha seu plano
-                </h2>
+                <h2 className="text-4xl md:text-5xl font-extrabold text-[#E4F64A]">Escolha seu plano</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-16 items-start">
-                {plansData.map((plan) => (
+                {plansData.map(plan => (
                     <PricingPlan key={plan.name} {...plan} />
                 ))}
             </div>
 
-            <p className="text-center text-gray-400 mt-12">
-                Sem fidelidade. Cancele quando quiser.
-            </p>
+            <p className="text-center text-gray-400 mt-12">Sem fidelidade. Cancele quando quiser.</p>
         </div>
     </section>
 );
