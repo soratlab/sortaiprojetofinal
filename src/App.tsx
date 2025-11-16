@@ -1,11 +1,10 @@
 import React from 'react';
-
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Features } from './components/Features';
 import { Testimonials } from './components/Testimonials';
 import { VideoSection } from './components/VideoSection';
-import { PricingSection } from './components/Pricing';
+import { PricingSection } from './components/PricingSection';
 import { AddonsSection } from './components/AddonsSection';
 import { Faq } from './components/Faq';
 import { FinalCta } from './components/FinalCta';
@@ -13,7 +12,7 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   return (
-    <div className="bg-[#111111] text-white">
+    <div className="bg-[#F7F7F7] text-gray-800">
       <Header />
       <main>
         <Hero />
@@ -27,5 +26,5 @@ export default function App() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }
