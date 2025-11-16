@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Features } from './components/Features';
@@ -12,7 +13,7 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   return (
-    <div className="bg-[#F7F7F7] text-gray-800">
+    <div className="bg-[#111111] text-white">
       <Header />
       <main>
         <Hero />
@@ -26,5 +27,5 @@ export default function App() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
